@@ -1,0 +1,23 @@
+Symmetric cryptosystem can be easily explained by a classic example of three people named Alice, Bob and Eve. We assume that Alice and Bob have shared a secret key. Alice wants to send a secret message to Bob which she encrypts using their shared secret key to create ciphertext, Alice sends this ciphertext to Bob through a channel, presumably insecure. Bob uses the same shared secret key to decrypt the ciphertext. When ciphertext was intercepted by Eve but she can’t decrypt it without the shared secret key.
+\begin{figure}[htbp]
+    \centering
+    \captionsetup{justification=centering}
+    \includegraphics[scale=.25]{ImageContent/SymmetricCryp.png}
+    \centering
+    \caption{Classic Alice, Bob and Eve Example}
+    \label{fig1}
+\end{figure}
+\subsection {Classic Cryptosystem}
+A classic scenario in security involves three parties: Alice, Bob, and Eve. Typically, Alice and Bob wish to communicate securely, and Eve wishes to eavesdrop on their communications. We start with a particularly simple instance of this scenario, depicted in \ref{fig1}, in which Alice wishes to send a single confidential message P to Bob. The message P is input to Alice. When Alice processes this input, it produces an output C. (“P” stands for “plaintext” and “C” stands for “ciphertext”.) Both Bob and Eve receive C, process it, and attempt to recover P . We represent what they compute by PBob and PEve, respectively. Alice and Bob have an advantage over Eve: they share a secret key K. We treat K as an additional input to Alice and Bob. We assume one fresh key K per plaintext P, but, at least at this abstract level, we do not impose that K and P have the same length.
+
+\subsection {Integrating Neural Network into Cryptosystem}
+We train three neural networks Alice, Bob and Eve whose jobs are as follows:
+\begin{itemize}
+    \item Alice’s job is to take in n-bit message (encoded as a vector of -1 and 1 to represent 0 and 1 respectively) and n-bit key as input to output a n-bit cipher-text.
+    \item Bob’s job is to take the n-bit cipher-text created by Alice and use the n-bit key as input to reconstruct the original n-bit message.
+    \item Eve’s job is to take only the n-bit cipher-text and try to recreate original n-bit message.
+\end{itemize}
+
+
+
+\subsection{NETWORK ARCHITECTURE}

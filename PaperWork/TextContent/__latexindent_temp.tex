@@ -1,0 +1,8 @@
+Symmetric cryptosystem can be easily explained by a classic example of three people named Alice, Bob and Eve. We assume that Alice and Bob have shared a secret key. Alice wants to send a secret message to Bob which she encrypts using their shared secret key to create ciphertext, Alice sends this ciphertext to Bob through a channel, presumably insecure. Bob uses the same shared secret key to decrypt the ciphertext. When ciphertext was intercepted by Eve but she can’t decrypt it without the shared secret key.
+\subsection {Integrating Neural Network into Cryptosystem}
+We train three neural networks Alice, Bob and Eve whose jobs are as follows:
+\begin{itemize}
+   \item Alice’s job is to take in n-bit message (encoded as a vector of -1 and 1 to represent 0 and 1 respectively) and n-bit key as input to output a n-bit cipher-text.
+    \item Bob’s job is to take the n-bit cipher-text created by Alice and use the n-bit key as input to reconstruct the original n-bit message.
+    \item Eve’s job is to take only the n-bit cipher-text and try to recreate original n-bit message.
+\end{itemize}
